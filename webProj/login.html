@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="styleform.css">
+</head>
+<body>
+    <header>
+        <div id = "navbar">
+            <div id = "name" class = "options">
+                <a href = "index.html">Learnify</a>
+            </div>
+            <div class = "options" id = "home">
+                <a href = "index.html">Home</a>
+            </div>
+            <div class = "options">
+                <a href = "about.html">About</a>
+            </div>
+            <div class = "options" id = "login">
+                <a href = "login.html" class = "signup-link">
+                    Log In
+                </a>
+            </div>
+        </div>
+    </header>
+    <div class="planeImg">
+        <img src="images/plane.png" alt="Plane">
+    </div>
+    <div class="next-page signin">
+        <h1>SIGN IN</h1>
+        <form id="loginForm">
+            <table>
+                <td>
+                    Name: 
+                </td>
+                <td>
+                    <input type ="textbox" placeholder="Your Name" id = "nameSignUp" required>
+                </td>
+                <tr>
+                    <td>
+                        <label for="email">Email Id:</label>
+                    </td>
+                    <td>
+                        <input type="email" id="email" name="email" placeholder="email@example.com" required>
+                        <span id="emailError">Please enter a valid email address</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="password">Password:</label>
+                    </td>
+                    <td>
+                        <input type="password" id="password" name="password" placeholder="Minimum 8 characters" required>
+                        <span id="passwordError">Password must be at least 8 characters long</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Gender: 
+                    </td>
+                    <td>
+                        <select id="gender" name="gender" placeholder = "select">
+                            <option value="female">Female</option>
+                            <option value="male">Male</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Birthday: 
+                    </td>
+                    <td>
+                        <input type="date" id="birthdate" name="birthdate" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Choose batch: 
+                    </td>
+                    <td>
+                        <input type="radio" id="roleUser" name="role" value="user" checked>
+                        <label for="roleUser">1st</label>
+                        <input type="radio" id="roleAdmin" name="role" value="admin">
+                        <label for="roleAdmin">2nd</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="button" class="submit" onclick="validateForm()">Submit</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div class="gradcircle1 grad"></div>
+    <div class="gradcircle2 grad"></div>
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById('nameSignUp').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var gender = document.getElementById('gender').value;
+            var birthdate = document.getElementById('birthdate').value;
+
+            if (name === "") {
+                alert("Please enter your name.");
+                return false;
+            }
+            
+            if (email === "" || password === "" || gender === "" || birthdate === "") {
+                alert("Please fill in all fields.");
+                return false;
+            }
+
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                document.getElementById('emailError').style.display = 'block';
+                return false;
+            } else {
+                document.getElementById('emailError').style.display = 'none';
+            }
+
+            if (password.length < 8) {
+                document.getElementById('passwordError').style.display = 'block';
+                return false;
+            } else {
+                document.getElementById('passwordError').style.display = 'none';
+            }
+
+            
+            document.getElementById('loginForm').submit(); 
+            window.location.href = "afterLogin.html?login=success";
+            return false;
+        }
+    </script>
+</body>
+</html>

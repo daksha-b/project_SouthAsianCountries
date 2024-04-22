@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>South Asian Countries</title>
+    <link rel = "stylesheet" href = "styleAfterLogin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-Wl/7JjWNxmjHHtMv3V+ZuGu5mnCuzdh2dFFpHc08Iyj5Y+txkrWLZx3Ihozj+q8J" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <div id = "navbar">
+            <div id = "name" class = "options">
+                <a href = "afterLogin.html">Learnify</a>
+            </div>
+            <div class = "options" id = "home">
+                <a href = "test.html">Take a Test!</a>
+            </div>
+            <div class = "options">
+                <a href = "about.html">About</a>
+            </div>
+            <div class = "options" id = "logout">
+                <a href = "login.html" class = "signup-link">Log Out</a>
+            </div>
+            
+        </div>
+    </header>
+    <div class="base">
+        <div class="searchCountryQues">
+            Which South Asian Country do you want to know about?
+        </div>
+        <div class="searchCountry">
+            <input type="text" id = "country" placeholder="Example: India" title = "">
+        </div>
+        <div class="searchTopicQues">
+            Type in the particulars!
+        </div>
+        <div class="searchTopic">
+            <input type="text" id = "topic" placeholder="Map, Flag, Leaders, Capital or Tourist Spots">
+        </div>
+        <div class="button">
+            <button type = "submit" id = "submitBtn" onclick>Submit</button>
+        </div>
+
+        <div id="imageContainer"></div> <!-- Container for the image -->
+        <div id="infoContainer"></div>
+        <div id="infoTourContainer"></div>
+
+
+        <div class="gradcircle1 grad">
+
+        </div>
+        <div class="gradcircle2 grad">
+            
+        </div>
+        <div class="gradcircle3 grad">
+            
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('submitBtn').addEventListener('click', function() {
+            clearContent();
+            var country = document.getElementById('country').value.trim();
+            var topic = document.getElementById('topic').value.trim().toLowerCase();
+
+            if (!country || !topic) {
+                alert('Please enter both the country name and the topic.');
+                return;
+            }
+
+            var topicMap = {
+                map: {
+                title: 'Map of',
+                images: {
+                    india: 'images/mapInd.png', 
+                    pakistan: 'images/mapPak.png',
+                    bangladesh: 'images/mapBangl.png',
+                    bhutan: 'images/mapBhu.png',
+                    maldives: 'images/mapMald.png',
+                    srilanka: 'images/mapSL.png',
+                    afghanistan: 'images/mapAfg.png',
+                    nepal: 'images/flagNepal.png',
+                }
+            },
+            flag: {
+                title: 'Flag of',
+                images: {
+                india: 'images/flagInd.png', 
+                pakistan: 'images/flagPak.png',
+                bangladesh: 'images/flagBangl.png',
+                bhutan: 'images/flagBhu.png',
+                maldives: 'images/flagMald.png',
+                srilanka: 'images/flagSL.png',
+                afghanistan: 'images/flagAfg.png',
+                nepal: 'images/flagNepal.png',
+            }},
+            tourist: {
+                title: 'Tourist spots in',
+                getInfo: function(country) {
+                    var touristSpots = {
+                        india: ['Taj Mahal', 'Red Fort', 'Qutub Minar'], 
+                        pakistan: ['Badshahi Mosque', 'Lahore Fort', 'Shalimar Gardens'],
+                        bangladesh: ['Sundarbans', 'Cox’s Bazar', 'Srimangal'],
+                        srilanka: ['Sigiriya', 'Yala National Park', 'Galle Fort'],
+                        nepal: ['Mount Everest', 'Pokhara', 'Lumbini'],
+                        bhutan: ['Taktsang Monastery', 'Punakha Dzong', 'Paro Valley'],
+                        maldives: ['Male', 'Ari Atoll', 'Baa Atoll']
+                    };
+                    return touristSpots[country.toLowerCase()];
+                }
+            },
+            leaders: {
+                title: 'Prominent leaders of',
+                getLeaders: function(country) {
+            var leaders = {
+                india: ['Narendra Modi', 'Dr. A.P.J. Abdul Kalam', 'Droupadi Murmu'],
+                pakistan: ['Imran Khan', 'Nawaz Sharif', 'Benazir Bhutto'],
+                bangladesh: ['Sheikh Hasina', 'Khaleda Zia'],
+                nepal: ['Sher Bahadur Deuba', 'KP Sharma Oli', 'Pushpa Kamal Dahal'],
+                bhutan: ['Lotay Tshering', 'Jigme Khesar Namgyel Wangchuck'],
+                maldives: ['Ibrahim Mohamed Solih', 'Abdulla Yameen'],
+                srilanka: ['Gotabaya Rajapaksa', 'Mahinda Rajapaksa', 'Ranil Wickremesinghe'],
+                afghanistan: ['Ashraf Ghani', 'Abdullah Abdullah', 'Hamid Karzai']
+};
+
+                return leaders[country.toLowerCase()];
+            }
+        },
+        
+            capital: {
+                displayInfo: true, 
+                getInfo: function(country) {
+                    var capitals = {
+                        india: 'New Delhi',
+                        pakistan: 'Islamabad',
+                        bangladesh: 'Dhaka',
+                        nepal: 'Kathmandu',
+                        bhutan: 'Thimphu',
+                        pakistan: 'Islamabad',
+                        maldives: 'Malé',
+                        srilanka: "Colombo",
+
+                    };
+                    return capitals[country.toLowerCase()];
+                }
+            }
+        };
+
+    
+        if (topicMap[topic]) {
+            
+            if (topic.toLowerCase() === 'tourist') {
+                var touristSpots = topicMap.tourist.getInfo(country);
+                displayTouristSpots(country, touristSpots);
+            } else if (topic.toLowerCase() === 'leaders') { 
+                var leaders = topicMap.leaders.getLeaders(country);
+                displayLeaders(country, leaders);
+            }
+            else {
+                if (topicMap[topic].displayInfo) {
+                    var capital = topicMap.capital.getInfo(country);
+                    displayInfo(capital,country);
+                }else{
+                    var imagePath = topicMap[topic].images[country.toLowerCase()];
+                    displayContent(topicMap[topic].title, country, imagePath);
+                }
+                
+
+            
+                
+            }
+        } else {
+            alert('No information found for the specified country and topic.');
+        }
+    });
+    function displayTouristSpots(country, spots) {
+        var infoContainer = document.getElementById('infoContainer');
+        infoContainer.innerHTML = '';
+
+        var titleElement = document.createElement('h2');
+        titleElement.textContent = 'Prominent tourist spots in ' + country;
+        infoContainer.appendChild(titleElement);
+
+        var listElement = document.createElement('ul');
+        spots.forEach(function(spot) {
+            var listItem = document.createElement('li');
+            listItem.textContent = spot;
+            listElement.appendChild(listItem);
+        });
+        infoContainer.appendChild(listElement);
+    }
+
+
+    function displayContent(title, country, imagePath) {
+    
+        var image = new Image(350,200);
+        image.src = imagePath;
+        var imageContainer = document.getElementById('imageContainer');
+        imageContainer.innerHTML = '';
+        imageContainer.appendChild(image);
+
+    
+        var titleElement = document.createElement('h2');
+        titleElement.textContent = title + ' ' + country;
+        imageContainer.appendChild(titleElement);
+    }
+
+    function displayInfo(capital,country) {
+    
+    var infoParagraph = document.createElement('p');
+    infoParagraph.textContent = 'The capital of ' + country + ' is ' + capital + '.';
+    var infoContainer = document.getElementById('infoContainer');
+    infoContainer.innerHTML = '';
+    infoContainer.appendChild(infoParagraph);
+    }
+
+    function clearContent() {
+    
+    var imageContainer = document.getElementById('imageContainer');
+    imageContainer.innerHTML = '';
+
+    
+    var infoContainer = document.getElementById('infoContainer');
+    infoContainer.innerHTML = '';
+}
+function displayLeaders(country, leaders) {
+    var infoContainer = document.getElementById('infoContainer');
+    infoContainer.innerHTML = '';
+
+    var titleElement = document.createElement('h2');
+    titleElement.textContent = 'Prominent leaders of' + ' ' + country;
+    infoContainer.appendChild(titleElement);
+
+    var listElement = document.createElement('ul');
+    leaders.forEach(function(leader) {
+        var listItem = document.createElement('li');
+        listItem.textContent = leader;
+        listElement.appendChild(listItem);
+    });
+    infoContainer.appendChild(listElement);
+}
+
+
+</script>
+</body>
+</html>
+

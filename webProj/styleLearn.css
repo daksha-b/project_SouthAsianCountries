@@ -1,0 +1,32 @@
+.heading{
+    height: 50px;
+    background-color: aquamarine;
+    text-align:center;
+    padding-top:20px;
+    font-size: 20px;;
+}
+.navbar{
+    height: 30px;
+    background-color: rgb(57, 56, 56);
+    display: flex;
+}
+.options{
+    color: azure;
+    margin-right: 150px;
+    margin-top: 5px;
+}
+.content{
+    display: flex;
+}
+.asianCountries{
+    background-color: cadetblue;
+    width: 30%;
+}
+.SouthasianCountries{
+    background-color: coral;
+    width: 40%;
+}
+.dailySchedule{
+    background-color: darkseagreen;
+    width: 30%
+}

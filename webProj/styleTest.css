@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #000814;
+    background-size: cover;
+    padding: 0;
+    color: #c3c3c3;
+}
+#navbar{
+    background-color: rgb(51, 51, 51,0.5);
+    height:65px;
+    z-index: 0;
+}
+.options{
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 50px;
+    color:#fdfcfd;
+    font-size: 20px;
+    
+}
+a{
+    text-decoration: none;
+    color:#faffff;
+}
+.signup-link{
+    color: #faffff;
+}
+#home{
+    margin-left :860px;
+}
+#name{
+    margin-left: 5px;
+}
+#logout{
+    padding:10px;
+    background: transparent;
+    color:#faffff;
+    border: 2px #c6c6c6 solid;
+    border-radius: 20px;
+    margin-right:auto;
+    cursor: pointer;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+#startButton{
+    height: 40px;
+    width:150px;
+    border-radius: 10px;
+    background-color: #17c1b1;
+    font-size: 25px;
+    font-weight: bold;
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin: auto;
+    cursor:pointer;
+}
+#startButton:hover{
+    transform: Scale(1.5);
+}
+#submitButton{
+    height: 40px;
+    width:180px;
+    border-radius: 10px;
+    background-color: #17c1b1;
+    font-size: 25px;
+    font-weight: bold;
+    cursor:pointer;
+}
+#submitButton:hover{
+    transform: Scale(1.5);
+}
+.question {
+    margin-bottom: 20px;
+}
+.question label {
+    display: block;
+    margin-bottom: 10px;
+}
+.timer {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+.gradcircle1{
+    position: absolute;
+    bottom:0;
+    left:0;
+}
+.gradcircle2{
+    position: absolute;
+    bottom:0;
+    right:0;
+}
+.gradcircle3{
+    position: absolute;
+    top:300px;
+    right:650px;
+}
+.grad{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background-color: #17c1b1;
+    filter: blur(200px);
+    z-index: 1;
+    position: fixed;
+}

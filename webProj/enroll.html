@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel = "stylesheet" href = "styleform.css">
+</head>
+<body>
+    <div id = "navbar">
+        <div id = "name" class = "options">
+            <a href = "index.html">Learnify</a>
+        </div>
+        <div class = "options" id = "home">
+            <a href = "index.html">Home</a>
+        </div>
+        <div class = "options">
+            <a href = "about.html">About</a>
+        </div>
+        <div class = "options">
+            <a href = "login.html">Log In</a>
+        </div>
+        <div class = "options" id = "signup">
+            <a href = "enroll.html" class = "signup-link">Sign Up</a>
+        </div>
+    </div>
+    <div class="planeImg">
+        <img src = "images/plane.png">
+    </div>
+    <div class = "next-page reg-box">
+        <h1>SIGN UP/REGISTER</h1>
+        
+        <form id = "signupForm">
+            <table>
+                <tr>
+                    <td>
+                        Name: 
+                    </td>
+                    <td>
+                        <input type ="textbox" placeholder="Your Name" id = "nameSignUp" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        E-Mail Id: 
+                    </td>
+                    <td>
+                        <input type ="email" placeholder="email@example.com" id = "email" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Gender: 
+                    </td>
+                    <td>
+                        <select id="gender" name="gender" placeholder = "select">
+                            <option value="female">Female</option>
+                            <option value="male">Male</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Birthday: 
+                    </td>
+                    <td>
+                        <input type="date" id="birthdate" name="birthdate" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Choose batch: 
+                    </td>
+                    <td>
+                        <input type="radio" id="roleUser" name="role" value="user" checked>
+                        <label for="roleUser">1st</label>
+                        <input type="radio" id="roleAdmin" name="role" value="admin">
+                        <label for="roleAdmin">2nd</label>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        Password 
+                    </td>
+                    <td>
+                        <input type = "password" required id = "password">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Confirm Password 
+                    </td>
+                    <td>
+                        <input type = "password" required id = "confirmPassword">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                        I agree to the terms and conditions
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" class="submit" onclick="validateForm()">Submit</button>
+                    </td>
+                    <td>
+                        <input type = "textarea" id = "afterEnrolling">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        </div>
+        <div class="gradcircle1 grad">
+
+        </div>
+        <div class="gradcircle2 grad">
+            
+        </div>
+        <script>
+            function validateForm() {
+                function validateForm() {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var cnfpassword = document.getElementById('confirmPassword').value;
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailRegex.test(email)) {
+                document.getElementById('emailError').style.display = 'block';
+                return;
+            } else {
+                document.getElementById('emailError').style.display = 'none';
+            }
+
+            if (password.length < 8) {
+                document.getElementById('passwordError').style.display = 'block';
+                return;
+            } else {
+                document.getElementById('passwordError').style.display = 'none';
+            }
+            if (password!= cnfpassword) {
+                document.getElementById('passwordError').style.display = 'block';
+                return;
+            } else {
+                document.getElementById('passwordError').style.display = 'none';
+            }
+
+            // If validation passes, you can submit the form or perform other actions here
+            document.getElementById('signupForm').submit(); // Example: submitting the form
+            window.location.href = "afterLogin.html?login=success";
+            return false;
+        }
+    }
+        </script>
+</body>
+</html>
+
+

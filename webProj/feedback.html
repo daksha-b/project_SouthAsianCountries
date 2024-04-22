@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel = "stylesheet" href = "feedback.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Page</title>
+    <!-- Include React and ReactDOM libraries -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <!-- Include Babel for JSX compilation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <header>
+        <div id = "navbar">
+            <div id = "name" class = "options">
+                <a href = "afterLogin.html">Learnify</a>
+            </div>
+            <div class = "options" id = "home">
+                <a href = "test.html">Take a Test!</a>
+            </div>
+            <div class = "options">
+                <a href = "about.html">About</a>
+            </div>
+            <div class = "options" id = "feedback">
+                <a href = "feedback.html" class = "signup-link">Feedback</a>
+            </div>
+            <div class = "options" id = "logout">
+                <a href = "login.html" class = "signup-link">Log Out</a>
+            </div>
+            
+            
+        </div>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // Feedback component
+        const Feedback = () => {
+            // Handle form submission
+            const handleSubmit = (e) => {
+                e.preventDefault();
+                // Get form data
+                const formData = new FormData(e.target);
+                // Display feedback data
+                console.log({
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    rating: formData.get('rating'),
+                    comment: formData.get('comment')
+                });
+                // You can send this data to your server for processing
+            };
+
+            return (
+                <div>
+                    <h1>Feedback Form</h1>
+                    <form onSubmit={handleSubmit}>
+                        <label>
+                            Name:
+                            <input type="text" name="name" required />
+                        </label>
+                        <br />
+                        <label>
+                            Email:
+                            <input type="email" name="email" required />
+                        </label>
+                        <br />
+                        <label>
+                            Rating:
+                            <select name="rating" required>
+                                <option value="">Select Rating</option>
+                                <option value="5">Excellent</option>
+                                <option value="4">Very Good</option>
+                                <option value="3">Good</option>
+                                <option value="2">Fair</option>
+                                <option value="1">Poor</option>
+                            </select>
+                        </label>
+                        <br />
+                        <label>
+                            Comment:
+                            <textarea name="comment" rows="4" cols="50"></textarea>
+                        </label>
+                        <br />
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            );
+        };
+
+        // Render the Feedback component to the root div
+        ReactDOM.render(<Feedback />, document.getElementById('root'));
+    </script>
+</body>
+</html>

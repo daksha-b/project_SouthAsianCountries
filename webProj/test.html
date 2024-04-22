@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test on South Asian Countries</title>
+    <link rel ="stylesheet" href = "styleTest.css" >
+</head>
+<body>
+    
+<body>
+    <header>
+        <div id = "navbar">
+            <div id = "name" class = "options">
+                <a href = "afterLogin.html">Learnify</a>
+            </div>
+            <div class = "options" id = "home">
+                <a href = "test.html">Take a Test!</a>
+            </div>
+            <div class = "options">
+                <a href = "about.html">About</a>
+            </div>
+            <div class = "options" id = "feedback">
+                <a href = "feedback.html" class = "signup-link">Feedback</a>
+            </div>
+            <div class = "options" id = "logout">
+                <a href = "login.html" class = "signup-link">Log Out</a>
+            </div>
+            
+            
+        </div>
+    </header>
+    <div class="container">
+        <button id="startButton" onclick="startTest()">Start Test</button>
+        <div id="questions" style="display: none;">
+            <div class="timer">Time remaining: <span id="timer">12:00</span></div>
+            <div class="question">
+                <label for="q1">Question 1: Which South Asian country has the capital city of New Delhi?</label>
+                <input type="radio" id="q1a" name="q1" value="a"> <label for="q1a">a) Bhutan</label><br>
+                <input type="radio" id="q1b" name="q1" value="b"> <label for="q1b">b) India</label><br>
+                <input type="radio" id="q1c" name="q1" value="c"> <label for="q1c">c) Pakistan</label><br>
+
+                <label for="q1">Question 2: What is the capital city of Pakistan?</label>
+                <input type="radio" id="q2a" name="q2" value="a"> <label for="q1a">a) New Delhi</label><br>
+                <input type="radio" id="q2b" name="q2" value="b"> <label for="q1b">b) Islamabad</label><br>
+                <input type="radio" id="q2c" name="q2" value="c"> <label for="q1c">c) Kabul</label><br>
+
+                <label for="q1">Question 3: Who is the President of Sri Lanka as of 2022?</label>
+                <input type="radio" id="q3a" name="q3" value="b"> <label for="q1a">a) Gotabaya Rajapaksa</label><br>
+                <input type="radio" id="q3b" name="q3" value="a"> <label for="q1b">b) Maithripala Sirisena</label><br>
+                <input type="radio" id="q3c" name="q3" value="c"> <label for="q1c">c) Mahinda Rajapaksa</label><br>
+
+                <label for="q1">Question 4: Which South Asian country is known as the "Land of Rivers"?</label>
+                <input type="radio" id="q4a" name="q4" value="b"> <label for="q1a">a) Bangladesh</label><br>
+                <input type="radio" id="q4b" name="q4" value="a"> <label for="q1b">b) Maldives</label><br>
+                <input type="radio" id="q4c" name="q4" value="c"> <label for="q1c">c) Afghanistan</label><br>
+
+                <label for="q1">Question 5: Who is the Prime Minister of Bangladesh as of 2022?</label>
+                <input type="radio" id="q5a" name="q5" value="b"> <label for="q1a">a) Sheikh Hasina</label><br>
+                <input type="radio" id="q5b" name="q5" value="a"> <label for="q1b">b) Khaleda Zia</label><br>
+                <input type="radio" id="q5c" name="q5" value="c"> <label for="q1c">c) Abdul Hamid</label><br>
+
+                <label for="q1">Question 6: Which country's flag is green with a white crescent and star?</label>
+                <input type="radio" id="q6a" name="q6" value="a"> <label for="q1a">a) Afghanistan</label><br>
+                <input type="radio" id="q6b" name="q6" value="c"> <label for="q1b">b) Bangladesh</label><br>
+                <input type="radio" id="q6c" name="q6" value="b"> <label for="q1c">c) Pakistan</label><br>
+
+                <label for="q1">Question 7: Who is the Prime Minister of India as of 2022?</label>
+                <input type="radio" id="q7a" name="q7" value="a"> <label for="q1a">a) A.P.J. Abdul Kalam</label><br>
+                <input type="radio" id="q7b" name="q7" value="c"> <label for="q1b">b) Indira Gandhi</label><br>
+                <input type="radio" id="q7c" name="q7" value="b"> <label for="q1c">c) Narendra Modi</label><br>
+
+                <label for="q1">Question 8: Which South Asian country is known as the "Pearl of the Indian Ocean"?</label>
+                <input type="radio" id="q8a" name="q8" value="a"> <label for="q1a">a) Maldives</label><br>
+                <input type="radio" id="q8b" name="q8" value="b"> <label for="q1b">b) Sri Lanka</label><br>
+                <input type="radio" id="q8c" name="q8" value="c"> <label for="q1c">c) India</label><br>
+
+                <label for="q1">Question 9: Which country's flag is green with a white vertical band on the hoist side, containing a green palm tree and white crescent?</label>
+                <input type="radio" id="q9a" name="q9" value="b"> <label for="q1a">a) Maldives</label><br>
+                <input type="radio" id="q9b" name="q9" value="a"> <label for="q1b">b) Bangladesh</label><br>
+                <input type="radio" id="q9c" name="q9" value="c"> <label for="q1c">c) Bhutan</label><br>
+
+                <label for="q1">Question 10: Which South Asian country is known as the "Land of the Rising Sun"?</label>
+                <input type="radio" id="q10a" name="q10" value="a"> <label for="q1a">a) Bhutan</label><br>
+                <input type="radio" id="q10b" name="q10" value="b"> <label for="q1b">b) Nepal</label><br>
+                <input type="radio" id="q10c" name="q10" value="c"> <label for="q1c">c) Bangladesh</label><br>
+            </div>
+            
+            <button id = "submitButton" onclick="submitTest()">Submit Test</button>
+            <div class="gradcircle1 grad">
+
+            </div>
+            <div class="gradcircle2 grad">
+                
+            </div>
+            <div class="gradcircle3 grad">
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let timer;
+        let timeLeft = 12 * 60; 
+
+        function startTimer() {
+            timer = setInterval(function() {
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    document.getElementById("timer").innerText = "Time's up!";
+                    document.getElementById("submitButton").style.display = "none";
+                    alert("Time's up! Please submit your test.");
+                } else {
+                    let minutes = Math.floor(timeLeft / 60);
+                    let seconds = timeLeft % 60;
+                    document.getElementById("timer").innerText = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+                    timeLeft--;
+                }
+            }, 1000);
+        }
+
+        function startTest() {
+            document.getElementById("startButton").style.display = "none";
+            document.getElementById("questions").style.display = "block";
+            startTimer();
+        }
+
+        function submitTest() {
+            clearInterval(timer);
+            let answered = document.querySelectorAll('input[name^="q"]:checked').length;
+            if (answered < 10) {
+                alert("Please answer all questions before submitting the test.");
+                return;
+            }
+
+            let score = calculateScore();
+            alert(`Your score is: ${score} out of 10`);
+        }
+
+        function calculateScore() {
+            let score = 0;
+            for (let i = 1; i <= 10; i++) {
+                let selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selectedOption && selectedOption.value === "b") {
+                    score++;
+                }
+            }
+            return score;
+        }
+        function submitTest() {
+            clearInterval(timer);
+            let answered = document.querySelectorAll('input[name^="q"]:checked').length;
+            if (answered < 10) {
+                alert("Please answer all questions before submitting the test.");
+                return;
+            }
+
+            let score = calculateScore();
+            displayResults(score);
+        }
+
+        function displayResults(score) {
+            let incorrectQuestions = [];
+            for (let i = 1; i <= 10; i++) {
+                let selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
+                if (!selectedOption || selectedOption.value !== "b") {
+                    incorrectQuestions.push(i);
+                }
+            }
+
+            let resultMessage = `Your score is: ${score} out of 10\n`;
+            if (incorrectQuestions.length > 0) {
+                resultMessage += "Incorrectly answered questions:\n";
+                incorrectQuestions.forEach((q) => {
+                    resultMessage += `Question ${q}\n`;
+                });
+            } else {
+                resultMessage += "Congratulations! You answered all questions correctly.";
+            }
+
+            alert(resultMessage);
+        }
+    </script>
+</body>
+</html>
